@@ -7,6 +7,10 @@ import numpy as np
 with open('iris_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
+# Carregar os nomes das espécies de íris para exibição
+data = load_iris()
+target_names = data['target_names']
+
 # Título do aplicativo
 st.title('Iris Species Prediction App')
 
@@ -22,7 +26,7 @@ if st.button('Predict'):
     test_array = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
     # Fazer a previsão
     prediction = model.predict(test_array)
-    species = data['target_names'][prediction][0]
+    species = target_names[prediction][0]  # Usa os nomes de espécies carregados
     # Mostrar a previsão
     st.write(f'The predicted species is: {species}')
 
