@@ -1,4 +1,6 @@
 # iris_model.py
+!pip install pickle
+
 import pickle
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
