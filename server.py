@@ -2,6 +2,7 @@
 import streamlit as st
 import pickle
 import numpy as np
+from sklearn.datasets import load_iris
 
 # Carregar o modelo treinado
 with open('iris_model.pkl', 'rb') as file:
@@ -29,6 +30,3 @@ if st.button('Predict'):
     species = target_names[prediction][0]  # Usa os nomes de espécies carregados
     # Mostrar a previsão
     st.write(f'The predicted species is: {species}')
-
-
-
